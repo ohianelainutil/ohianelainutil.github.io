@@ -1,0 +1,264 @@
+*{
+margin: 0;
+padding: 0;
+}
+body{
+background: #E9ECF4;
+color:#000;
+font-family: 'Source Sans Pro', sans-serif;
+
+}
+.contenedor{
+width: 90%;
+max-width: 1000px;
+margin: 20px auto;
+display: grid;
+/*Espacio entre todos los recuadros o elementos (No en la parte externa)*/
+grid-gap:20px;
+/*Numero de columnas vertical*/
+grid-template-columns: repeat(3, 1fr);
+/*Numero de filas en vertical*/
+grid-template-rows: repeat(4, auto);
+
+/*CON GRID AREA (aqui se define las columnas y las filas,fila letra horizontal y columnas las palabras de la linea horizontal)*/
+grid-template-areas: "header header header" 
+                     "contenido contenido sidebar"
+                     "widget-1 widget-2 sidebar"
+                     "footer footer footer"
+                     ;
+
+
+
+
+}
+
+footer nav {
+    width:25%;
+    /* Flexbox */
+
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+}
+
+footer nav a {
+    background:#c0392b;
+    color:#fff;
+    text-align: center;
+    text-decoration: none;
+    padding:10px;
+
+    /* Flexbox */
+    flex-grow:1;
+}
+
+footer nav a:hover {
+    background:#e74c3c;
+}
+
+
+
+
+.positionDiputaKakacionVasca{
+border-radius: 10px;
+border: solid 8px  black ;
+
+
+}
+
+
+
+.contenedor > div, .contenedor .header,
+.contenedor .contenido,
+.contenedor .footer {
+background: #fff;
+padding: 20px;
+border-radius: 4px;}
+
+
+.contenedor .header{ 
+    background: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    /*CON GRID AREA*/
+    grid-area: header;
+    
+
+}
+
+.contenedor .sidebar{
+    background: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    
+
+ }
+
+
+
+.contenedor .header {
+
+    background: gray;
+    border: solid 8px  black ;
+    color:#fff;
+
+    /*CON CSS
+    /*Numero de columnas de arriba a abajo
+    grid-column-start: 1;
+    /*Podemos poner la cifra -1 asi abarca todo el espacio disponible
+    grid-column-end: 4;
+    */
+}
+.contenedor .contenido{
+    grid-area: contenido;
+    /* CON CSS Numero de columnas  que ocupa el contenido
+grid-column: span 2; */
+
+}
+
+.contenedor .sidebar{
+    /* Es el espacio que quieres que ocupe el sidebar*/
+grid-column: 3 / 4;
+border:solid 8px red ;
+background:  #909497 ;  
+/*Centrar el texto de forma horizontal*/
+text-align: center;
+display: flex;
+/*Es para centrar el texto de forma vertical*/
+align-items: center;
+/*Es para centrar el contenido de texto*/
+justify-content: center;
+/*Es para abarcar el numero de lineas verticales que quieres que ocupe el "sidebar"
+se puede poner span + El numero 
+
+CON CSS
+grid-row: 2 / 4; 
+ */
+
+
+min-height: 100px;
+/*CON GRID AREA*/
+grid-area: sidebar;
+
+}
+
+.contenedor .widget-1 , .contenedor .widget-2 {
+
+background: gray;
+border: solid 8px  black;
+color:  #fff;
+height: 100px;
+text-align: center;
+display: flex;
+align-items: center;
+text-align: center;
+justify-content: center;
+}
+
+/*CON GRID AREA*/
+
+.contenedor .widget-1 {
+    grid-area: widget-1;
+}
+.contenedor .widget-2 {
+    grid-area: widget-2;
+}
+
+
+
+
+.contenedor .footer{
+background: gray;
+border: solid 8px  black;
+color:#fff;
+
+/*CON CSS
+grid-column:  3 span;
+/*CON GRID AREA*/
+grid-area: footer;
+
+}
+
+/* RESPONSIVE CON CSS Y MEDIAQUERE
+
+@media screen and (max-width: 800px) { 
+
+.contenedor .contenido{
+grid-column: 1 / -1;
+}
+.contenedor .sidebar{  
+    grid-column: 1 / -1;
+}
+.contenedor .widget-1{
+    grid-column: span 3;
+}
+}
+
+*/
+
+
+@media screen and (max-width: 800px) 
+{
+
+.contenedor{
+
+    grid-template-areas: 
+    "header header header" 
+    "contenido contenido contenido"
+    "sidebar sidebar sidebar"
+    "widget-1 widget-1 widget-1"
+    "widget-2 widget-2 widget-2"
+    "footer footer footer"
+    ;
+
+
+
+
+}
+
+
+.LogoCabezera{
+display: block;
+margin: auto;
+
+
+}
+
+
+.TituloPag{
+
+display: block;
+text-align: center;
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
